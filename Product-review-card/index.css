@@ -1,0 +1,210 @@
+:root {
+    /* primary */
+    --Dark-cyan: hsl(158, 36%, 37%);
+    --Cream: hsl(30, 38%, 92%);
+    /* neutral */
+    --Very-dark-blue: hsl(212, 21%, 14%);
+    --Dark-grayish-blue: hsl(228, 12%, 48%);
+    --White: hsl(0, 0%, 100%)
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0px auto;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    min-width: 375px;
+    max-width: 1440px;
+}
+
+.main-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 0;
+}
+
+.image-desktop {
+    display: none;
+}
+
+.container {
+    background-color: var(--White);
+    border-radius: 15px;
+    width: 37.5rem;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.image-mobile {
+    width: 375px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.perfume {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: var(--Dark-grayish-blue);
+    letter-spacing: 0.5rem;
+    margin-left: 0px;
+}
+
+.main-content h2 {
+    font-family: 'Fraunces', sans-serif;
+    color: var(--Very-dark-blue);
+    font-weight: 700;
+    font-size: 3.8rem;
+    line-height: 1;
+}
+
+.sentence {
+    font-weight: 500;
+    color: var(--Dark-grayish-blue);
+    line-height: 1.5;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.button-sec {
+    background-color: var(--Dark-cyan);
+    padding: 1.5rem 11rem;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button {
+    border-style: none;
+    color: var(--White);
+    font-size: 1.5rem;
+    font-weight: 500;
+    background-color: unset;
+    width: 10rem;
+}
+
+.button-sec:active,
+.button-sec:hover {
+    background-color: var(--Very-dark-blue);
+}
+
+.prices {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-left: 0;
+    margin-bottom: 10px;
+}
+
+.price2 {
+    opacity: 50%;
+    text-decoration: line-through;
+}
+
+.price1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 3.5rem;
+    color: var(--Dark-cyan)
+}
+
+.attribution {
+    font-size: 1.1rem ;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+    text-decoration: none;
+}
+
+.attribution a:hover {
+    text-decoration: underline;
+    font-size: 1.3rem;
+    transition: all 0.3s;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (min-width:375px) {
+    .container {
+        width: 37.5rem;
+        display: grid;
+        grid-template-columns: none;
+        margin: 2rem auto;
+    }
+
+    .result-head {
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+    }
+}
+
+@media screen and (max-width:440px) {
+    * {
+        margin: 0;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-width: 1440px;
+        border-radius: 25px;
+    }
+
+    /* .header {
+        margin-left: 0;
+        flex-grow: 1;
+    } */
+
+    .image-mobile {
+        display: none;
+    }
+
+    .image-desktop {
+        display: block;
+        width: 100%;
+        overflow: hidden;
+        border-top-left-radius: 25px;
+        border-bottom-left-radius: 25px;
+    }
+    html{
+        font-size:20px ;
+    }
+    .main-content{
+        gap:30px
+    }
+    .sentence{
+        font-size: 2rem;
+    }
+    .main-content>h2{
+        font-size: 5rem;
+    }
+    .price1{
+        font-size: 4rem;
+    }
+    .price2{
+        font-size: 1.3rem;
+    }
+    .button{
+        font-size: 2rem;
+        width: 11rem;
+    }
+    .button-sec img{
+        width: 1.7rem;
+        height: 1.7rem;
+    }
+    .button-sec{
+        gap: 1.5rem;
+    }
+
+
+}
