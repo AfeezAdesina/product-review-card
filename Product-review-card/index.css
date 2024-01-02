@@ -5,51 +5,55 @@
     /* neutral */
     --Very-dark-blue: hsl(212, 21%, 14%);
     --Dark-grayish-blue: hsl(228, 12%, 48%);
-    --White: hsl(0, 0%, 100%)
+    --White: hsl(0, 0%, 100%);
 }
 
 * {
     box-sizing: border-box;
-    margin: 0px auto;
+    margin: 0 auto;
 }
 
 html {
     font-size: 10px;
+    margin-top: 50px;
 }
 
 body {
     font-family: 'Montserrat', sans-serif;
-    min-width: 375px;
-    max-width: 1440px;
+    background-color: var(--Cream);
 }
 
 .main-content {
-    padding: 20px;
+    padding: 40px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin-left: 0;
+    gap: 30px;
 }
 
-.image-desktop {
+.image-mobile {
     display: none;
+}
+.image-desktop {
+    width: 100%;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+   height: auto;
+   
 }
 
 .container {
     background-color: var(--White);
     border-radius: 15px;
-    width: 37.5rem;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    width: 90rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+    
 }
 
-.image-mobile {
-    width: 375px;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-}
 
 .perfume {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     text-transform: uppercase;
     color: var(--Dark-grayish-blue);
     letter-spacing: 0.5rem;
@@ -60,16 +64,22 @@ body {
     font-family: 'Fraunces', sans-serif;
     color: var(--Very-dark-blue);
     font-weight: 700;
-    font-size: 3.8rem;
-    line-height: 1;
+    font-size: 4.6rem;
+    letter-spacing: 2px;
+    line-height: 1.1;
+    margin-left: 0;
+}
+
+.main-content:last-child {
+    padding-bottom: 0;
 }
 
 .sentence {
     font-weight: 500;
     color: var(--Dark-grayish-blue);
-    line-height: 1.5;
+    line-height: 2;
     margin-bottom: 15px;
-    font-size: 1.3rem;
+    font-size: 2rem;
 }
 
 .button-sec {
@@ -84,10 +94,10 @@ body {
 .button {
     border-style: none;
     color: var(--White);
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 500;
     background-color: unset;
-    width: 10rem;
+    width:100%;
 }
 
 .button-sec:active,
@@ -96,26 +106,29 @@ body {
 }
 
 .prices {
+   
     display: flex;
-    gap: 20px;
+    gap: 30px;
     align-items: center;
     margin-left: 0;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
 }
 
 .price2 {
     opacity: 50%;
     text-decoration: line-through;
+    font-size: 1.6rem;
 }
 
 .price1 {
     font-family: 'Fraunces', serif;
     font-weight: 700;
-    font-size: 3.5rem;
+    font-size: 4.8rem;
     color: var(--Dark-cyan)
 }
 
 .attribution {
+    display: none;
     font-size: 1.1rem ;
     text-align: center;
     margin: 1rem 0;
@@ -133,78 +146,47 @@ body {
 }
 
 /* MEDIA QUERIES */
+ 
 
-@media screen and (min-width:375px) {
+@media screen and (max-width:576px) {
+    html{
+        font-size: 8px;
+    }
+    .image-desktop {
+        display: none;
+    }
+    .image-mobile {
+        display: block;
+        width: 100%;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
     .container {
-        width: 37.5rem;
+        width: 40rem;
         display: grid;
         grid-template-columns: none;
-        margin: 2rem auto;
+        margin: 1rem auto;
     }
 
     .result-head {
         border-top-right-radius: 0;
         border-top-left-radius: 0;
     }
-}
-
-@media screen and (max-width:440px) {
-    * {
-        margin: 0;
-    }
-
-    .container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        min-width: 1440px;
-        border-radius: 25px;
-    }
-
-    /* .header {
-        margin-left: 0;
-        flex-grow: 1;
-    } */
-
-    .image-mobile {
-        display: none;
-    }
-
-    .image-desktop {
-        display: block;
-        width: 100%;
-        overflow: hidden;
-        border-top-left-radius: 25px;
-        border-bottom-left-radius: 25px;
-    }
-    html{
-        font-size:20px ;
-    }
     .main-content{
-        gap:30px
+        padding: 2rem;
+        gap: 2rem;
+    
     }
-    .sentence{
-        font-size: 2rem;
-    }
-    .main-content>h2{
-        font-size: 5rem;
-    }
-    .price1{
+    .main-content h2{
         font-size: 4rem;
     }
-    .price2{
-        font-size: 1.3rem;
-    }
     .button{
-        font-size: 2rem;
-        width: 11rem;
+        font-size:1.4rem ;
     }
-    .button-sec img{
-        width: 1.7rem;
-        height: 1.7rem;
+    .price1{
+        font-size: 3.5rem;
     }
-    .button-sec{
-        gap: 1.5rem;
+    .prices{
+        gap: 1rem;
     }
-
-
 }
